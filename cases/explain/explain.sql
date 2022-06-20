@@ -18,7 +18,7 @@ explain select userID as a, MIN(score) as b from t1 group by userID order by use
 explain select userID as user, MAX(score) as max from t1 group by userID order by max asc;
 explain select userID,count(score) from t1 where userID>2 group by userID having count(score)>1 order by userID;
 explain select spID,userID from t1 where score>2;
-explain distinct select spID,userID from t1 where score>2;
+explain select distinct spID,userID from t1 where score>2;
 explain select spID,userID from t1 where score>2 order by spID asc;
 explain select userID, SUM(score) from t1 where score>2 group by userID order by userID desc;
 explain select userID, SUM(score) from t1 where score>2 group by userID having count(score)>1 order by userID desc;
