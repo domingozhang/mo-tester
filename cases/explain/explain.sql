@@ -1,4 +1,4 @@
-select date_add("1997-12-31 23:59:59",INTERVAL 1 YEAR);
+explain select date_add("1997-12-31 23:59:59",INTERVAL 1 YEAR);
 
 drop table if exists t1;
 create table t1 (spID int,userID int,score smallint);
@@ -209,5 +209,3 @@ explain SELECT (WITH qn AS (SELECT t2.a*a as a FROM t1),
         qn2 AS (SELECT 3*a AS b FROM qn)
         SELECT * from qn2 LIMIT 1)
 FROM t1 as t2;
-
-
